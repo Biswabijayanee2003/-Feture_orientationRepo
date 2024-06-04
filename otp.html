@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><style>body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+#otpDisplay {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#generateBtn {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>OTP Generator</h1>
+        <div id="otpDisplay"></div>
+        <button id="generateBtn">Generate OTP</button>
+    </div>
+    <script>function generateOTP() {
+    // Generate a random 6-digit OTP
+    const otp = Math.floor(100000 + Math.random() * 900000);
+    return otp.toString();
+}
+
+function displayOTP() {
+    const otpDisplay = document.getElementById('otpDisplay');
+    otpDisplay.textContent = generateOTP();
+}
+
+const generateBtn = document.getElementById('generateBtn');
+generateBtn.addEventListener('click', displayOTP);
+</script>
+</body>
+</html>
